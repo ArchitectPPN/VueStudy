@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>V-Bind</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+	<style>
+		.style{
+			background: deeppink;
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<lable for="r1">点击添加样式</lable>
+		<input type="checkbox" id="r1" v-model="switch1">
+		<div v-bind:class="{'style' : switch1}" >
+			效果显示
+		</div>
+	</div>
+	<script>
+		new Vue({
+			el : '#app',
+			data : {
+                switch1 : false
+			}
+		})
+	</script>
+</body>
+</html>
