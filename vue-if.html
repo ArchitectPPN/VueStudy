@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>if条件语句</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<label for="r1">点击添加效果</label>
+		<input type="checkbox" id="r1" v-model="screen">
+		<p v-if="screen">现在你看到我来</p>
+	</div>
+	<script>
+		new Vue({
+			el : '#app',
+			data : {
+				screen : false
+			}
+		})
+	</script>
+</body>
+</html>
