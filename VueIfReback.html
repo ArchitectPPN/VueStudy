@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 复习</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <lable for="r1">点击查看</lable>
+        <input type="checkbox" id="r1" v-model="ok">
+        <div v-if="ok">
+            nihao
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                ok : true
+            }
+        })
+    </script>
+</body>
+</html>
