@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>For循环</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<ol>
+			<li v-for="site in sites">
+				{{site.name}}
+			</li>
+		</ol>
+		<ul>
+			<li v-for="(game, index) in games">
+				{{index}}---{{game.name}}
+			</li>
+		</ul>
+		<ul>
+			<template v-for="(game, index) in games">
+				<li>{{index}}</li>
+				<li>{{game.name}}</li>
+			</template>
+		</ul>
+
+		1-10
+		<ul>
+			<li v-for="n in 10">
+				{{n}}
+			</li>
+		</ul>
+
+		<ul>
+			<li v-for="(key, value, index) in object">
+				{{key}}: {{value}} : {{index}}
+			</li>
+		</ul>
+
+	</div>
+	<script>
+		new Vue({
+			el : '#app',
+			data : {
+				sites : [
+					{name : 'NG'},
+					{name : 'Architect'},
+					{name : 'GOD'},
+				],
+				games : [
+					{name : '英雄联盟'},
+					{name : 'APEX'},
+					{name : 'Over Watch'},
+					{name : 'Cross Fire'},
+				],
+				object :{
+				    name : 'Skill',
+					skill : 'Back To Three Second Ago',
+					age : 28,
+					height : 300
+				}
+			}
+		})
+	</script>
+</body>
+</html>
