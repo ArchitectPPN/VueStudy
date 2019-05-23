@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Watch 计数器</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<P style="font-size: 25px;">计数器: {{counter}}</P>
+	<button @click="counter++" style="font-size: 25px;">点我</button>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            counter: 1
+        }
+    });
+    vm.$watch('counter', function (nav, num) {
+        alert('counter的值' + num + '变为' + nav + '!');
+    });
+</script>
+</body>
+</html>

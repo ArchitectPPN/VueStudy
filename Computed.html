@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+	<style>
+		.active{
+			width: 100px;
+			height: 100px;
+			background: deeppink;
+		}
+		.text-danger {
+			background: red;
+		}
+		.width{
+			width: 200px;
+		}
+		.height{
+			height: 300px;
+		}
+		.color{
+			background: aqua;
+		}
+		.font-color{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" >
+		<p>原始字符串: {{message}}</p>
+		<p>计算反转后的字符串: {{reversedMessage}}</p>
+		<div v-bind:class="{active: isActive}"></div>
+		<div v-bind:class="object"></div>
+		<div v-bind:class="sytleUse">
+			你看到我了嘛?
+		</div>
+	</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message : 'Round Foun',
+			isActive:true,
+			object : {
+                active: true,
+				'text-danger' : true
+			},
+		},
+		computed : {
+            // 计算属性的 getter
+			reversedMessage : function(){
+			    return this.message.split('').reverse().join('');
+			},
+            sytleUse : function(){
+                return{
+                    width: true,
+                    color: true,
+                    height : true,
+					'font-color' : this.object.active && this.isActive
+                }
+            }
+		}
+    })
+</script>
+</html>
