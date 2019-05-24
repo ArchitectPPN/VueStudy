@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时间处理器</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<button v-on:click="counter += 1">增加</button>
+	<p>这个按钮被点击了 {{counter}}.</p>
+
+	<button v-on:click="Msg">提示</button>
+	<button v-on:click="say()">默认信息</button>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            name: '彬彬'
+        },
+        methods: {
+            Msg: function (event) {
+                alert('Hello' + this.name + '!');
+                if(event)
+				{
+                    alert(event.target.tagName);
+				}
+            },
+			say:function(message = '默认信息'){
+				alert(message)
+			}
+        }
+    });
+    app.Msg();
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<com></com>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {},
+		components : {
+            'com' :  {
+                template: '<h1>我是组件哦~</h1>'
+			}
+		}
+    })
+</script>
+</body>
+</html>
