@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="message" placeholder="编辑信息...">
+        <p>{{message}}</p>
+
+        <p>{{text}}</p>
+        <textarea name="" v-model="text" id="" cols="30" rows="10"></textarea>
+    </div>
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                message : '我是默认信息~',
+                text : '这是文本消息啊~'
+            }
+        })
+    </script>
+</body>
+</html>
